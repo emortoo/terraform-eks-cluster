@@ -20,7 +20,6 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "mybucket" {
   }
 }
 
-
 #Create dynamodb
 resource "aws_dynamodb_table" "table" {
   name           = "state-lock"

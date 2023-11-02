@@ -11,6 +11,14 @@ terraform {
     }
   }
 
+  backend "s3" {
+     bucket         = "s3statebackend-emortoo-project"
+     key            = "dev/terraform.tfstate"
+     region         = "us-east-1"
+     dynamodb_table = "state-lock"
+     encrypt        = true
+   }
+
   required_version = ">= 1.4.6"
 }
 
